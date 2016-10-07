@@ -1,95 +1,16 @@
-blititor
-========
+# 공개SW 해커톤 2016 웹사이트
 
-
-Easy to custom for the all Web Agencies and Web Masters in Korea
-
-> This code is really easy to customize for your business! - Web developer journal in korean times
+> Powered by
 
 ![blititor_logo_nodejsstyle7](https://cloud.githubusercontent.com/assets/22411481/18962436/cd87572a-86ab-11e6-8e6b-d145b325e119.png)
 
-(a logo presented by Hyejin Lee @melthleeth)
-
-## Stack
-
-- NodeJS + MysqlDB(MariaDB) + Sphinx + Nginx (recommended)
-- Express.js + Socket.io
-- Nunjucks html template
-- Jquery and many frontend frameworks
-- and wonderful NPM
-
-## Demo
-
-check out the samples! based awesome css frameworks
-
-- pure
-- bootstrap
-- foundation
-- materialize
-- kube
-- ...
-
-## Usage
-
-prepare git, nodejs, npm
-
-### clone repos
+## 설치하기
 
 ```shell
-git clone git://github.com/soomtong/blititor.git
-```
-
-### install component with npm
-
-```shell
-npm install
-```
-
-### create module_list.json
-
-```shell
-node core/setup.js module
-```
-
-### database configuration (mysql, mariadb)
-
-```shell
-node core/setup.js db
-```
-
-### make database tables for blititor
-
-```shell
-node core/setup.js db-init
-```
-
-for preparing non-core modules ('guestbook' or 'teamblog'...)
-
-```shell
-node core/setup.js db-init some_module_name
-```
-
-### make theme configuration
-
-```shell
-node core/setup.js theme
-```
-
-### make admin account
-
-```shell
-node core/setup.js admin
-```
-
-### run node app
-
-```shell
-node core/index
-```
-
-or u can override default port using option `port` or `p` 
-
-```
-node core/index -port=3000
-node core/index -p 3000
+git clone git://github.com/kosslab-kr/kosshack2016-web.git  # 클론
+npm install  # 의존성 설치
+node core/setup db  # 데이터베이스 설정
+node core/setup db-init  # 필요한 데이터베이스 생성
+node core/setup theme  # 이 단계에서 kosshack 사이트를 고르세요
+node core/index  # 서버 실행! 기본 포트는 3010입니다
 ```
