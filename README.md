@@ -18,4 +18,4 @@ node core/setup admin  # for admin account
 node core/index  # 서버 실행! 기본 포트는 3010입니다
 ```
 
-and u can connect with `/admin/login` or `/manage/login`
+and u can connect admin or manager page with `/admin/login` or `/manage/login` in your browser.
