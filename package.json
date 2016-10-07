@@ -1,0 +1,59 @@
+{
+  "name": "blititer",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": "~4.2.1 || ~0.12.0",
+    "iojs": ">=1.2.0"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.13.3",
+    "colors": "latest",
+    "compression": "^1.5.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.3.5",
+    "errorhandler": "^1.4.2",
+    "express": "^4.13.3",
+    "express-device": "^0.4.2",
+    "express-mysql-session": "latest",
+    "express-session": "latest",
+    "express-status-monitor": "0.0.9",
+    "express-validator": "latest",
+    "knex": "^0.9.0",
+    "lusca": "^1.3.0",
+    "lwip": "0.0.9",
+    "markdown-it": "^7.0.0",
+    "method-override": "^2.3.5",
+    "minimist": "^1.2.0",
+    "mkdirp": "latest",
+    "moment": "^2.13.0",
+    "morgan": "^1.6.1",
+    "multer": "^1.1.0",
+    "mysql": "latest",
+    "neo-async": "^1.7.4",
+    "nunjucks": "^2.4.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "prompt": "^1.0.0",
+    "remove-markdown": "^0.1.0",
+    "semver": "^5.0.3",
+    "serve-favicon": "^2.3.0",
+    "socket.io": "^1.4.8",
+    "striptags": "^2.1.1",
+    "useragent": "latest",
+    "uuid": "^2.0.2",
+    "winston": "^2.1.1"
+  },
+  "scripts": {
+    "dev": "nodemon core/index.js",
+    "prepare": "node core/setup.js module",
+    "setup": "node core/setup.js",
+    "start": "node core/index.js",
+    "prod": "echo \"set production\" && exit 0",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "express-print-routes": "^1.0.0"
+  }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include '../include/header.html' %}
+</head>
+<body>
+
+<div class="container">
+    <div class="header clearfix">
+
+        {% include '../include/menu.html' %}
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="bg-guest-form-holder">
+
+                <h4>Team Blog</h4>
+                <form id="message_form" method="post" action="{{ route.teamblog_root + route.teamblog.write }}">
+                    <fieldset class="form-group">
+                        <label for="message">Post using markdown format <a href="https://guides.github.com/features/mastering-markdown/" target="_blank">help</a></label>
+                        <textarea class="form-control" name="content" id="message" rows="20"></textarea>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label for="tags">Tags</label>
+                        <input type="text" name="tags" class="form-control" id="tags" placeholder="Separated by comma(,)">
+                    </fieldset>
+
+                    {% if message.error %}
+                    {% for error in message.error %}
+                    <div class="alert alert-warning" role="alert">
+                        <strong>Warning!</strong> {{ error.msg }}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+
+                    <input type="hidden" name="_csrf" value="{{ _csrf }}"/>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    {% include '../include/footer.html' %}
+
+</div>
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="http://v4-alpha.getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://github.hubspot.com/tether/dist/js/tether.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+<script src="{{site.theme}}/common/script.js"></script>
+<!-- version 2 we use this pattern -->
+<script src="/lib/editor.js"></script>
+<script>
+    $(document).ready(function () {
+
+    });
+</script></body>
+</html>

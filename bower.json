@@ -1,0 +1,17 @@
+{
+  "name": "blititer",
+  "version": "0.1.0",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "pure": "^0.6.0",
+    "font-awesome": "^4.6.3",
+    "jwerty": "~0.3.2",
+    "blueimp-file-upload": "^9.12.5",
+    "dragula.js": "dragula#^3.7.2"
+  },
+  "devDependencies": {}
+}

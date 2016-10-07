@@ -1,0 +1,7 @@
+{
+  "locale": "ko",
+  "logLevel": "debug",
+  "configFile": "config.json",
+  "cookieSecret": "blititor",
+  "sessionSecret": "blititor"
+}

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{app.title}} - {{site.title}}</title>
+    {% include '../include/style.html' %}
+</head>
+<body>
+
+{% include '../include/header.html' %}
+
+<div class="splash-container">
+    <div class="splash">
+        {% if message.error %}
+        {% for error in message.error %}
+        <div class="alert alert-login">
+            <strong>Warning!</strong> {{ error.msg }}
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        <h1 class="splash-head">{{title}}</h1>
+        <p class="splash-subhead">
+            This is a simple plain demo page, and it's the index page
+        </p>
+        <p>
+            <a href="{{site.root}}{{menu.admin_root}}" class="pure-button pure-button-primary">관리자 로그인</a>
+            <a href="{{site.root}}{{menu.manage_root}}" class="pure-button pure-button-primary">운영자 로그인</a>
+        </p>
+    </div>
+</div>
+
+<div class="content-wrapper">
+    <div class="content">
+        <h2 class="content-head is-center">included normal html pages and admin accounts, access log modules</h2>
+
+        <div class="pure-g">
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+                <h3 class="content-subhead">
+                    <i class="fa fa-rocket"></i>
+                    Template Engine
+                </h3>
+                <p>
+                    Jinja2 스타일의 노드JS 템플릿 엔진 <a href="http://mozilla.github.io/nunjucks/" target="_blank">Nunjucks</a> Template Language 를 사용해 자유롭게 HTML 페이지에 내용을 출력하고 파일을 포함할 수 있습니다.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-mobile"></i>
+                    Easy Customize
+                </h3>
+                <p>
+                    즉시 사용할 수 있는 다양한 템플릿을 통해 원하는 디자인을 쉽게 만들어 낼 수 있습니다.
+                    지금 보시는 테마는 <a href="//purecss.io" target="_blank">PureCSS</a> 를 기반으로 만들어져 있습니다.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-th-large"></i>
+                    Module System
+                </h3>
+                <p>
+                    가장 강력한 모듈 생태계를 가지고 있는 npm 을 통해 확장 가능합니다.
+                    블리티터가 사용하고 있는 <a href="//blititor.com/package" target="_blank">패키지 리스트</a>.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-check-square-o"></i>
+                    Plays Nice
+                </h3>
+                <p>
+                    웹 개발자가 아니어도 따라하기를 통해 쉽게 운용이 가능합니다.
+                    <a href="//blititor.com/guide/video" target="_blank">튜토리얼 영상</a>을 확인하세요.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ribbon l-box-lrg pure-g">
+        {% include '../include/sub_section.html' %}
+    </div>
+
+    <div class="content">
+        <h2 class="content-head is-center">직접 계정을 등록하여 사용해 보세요.</h2>
+
+        <div class="pure-g">
+            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                <form class="pure-form pure-form-stacked sign-up" action="{{ site.root }}{{ route.account_root + route.account.registerSimple }}" method="post">
+                    <fieldset>
+                        <label for="nickname">아이디 <small>화면에 보이는 이름입니다</small></label>
+                        <input id="nickname" name="nickname" type="text" placeholder="Your Name">
+
+                        <label for="email">이메일 <small>고유한 계정이 되는 아이디입니다</small></label>
+                        <input id="email" name="email" type="email" placeholder="Your Email">
+
+                        <label for="password">패스워드 <small>4자 이상의 패스워드를 사용해주세요</small></label>
+                        <input id="password" name="password" type="password" placeholder="Your Password">
+
+                        <input type="hidden" name="_csrf" value="{{ _csrf }}" hidden>
+                        {% if not user.uuid %}
+                        <button type="submit" class="pure-button">Sign Up</button>
+                        {% else %}
+                        <button type="submit" class="pure-button" disabled>Already Logged In</button>
+                        {% endif %}
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                <h4>Support this project</h4>
+                <p>
+                    블리티터 프로젝트가 마음에 드시나요?
+                    <br>
+                    계속 개발할 수 있도록 지원 및 후원해주세요.
+                    직접 고용 및 페이팔 기부도 가능합니다
+                </p>
+
+                <h4>More Information</h4>
+                <p>
+                    등록된 계정은 테스트 용으로 모든 권한이 부여되어 있습니다. (관리자 권한과 운영자 권한)
+                    저장된 개인 정보는 절대 재사용되지 않으며 수시로 삭제됩니다.
+                    <br>
+                    <a href="//blititor.com">블리티터 홈페이지</a>를 방문해 다른 테마도 살펴보세요.
+                    <br>
+                    <br>
+                    그 외 궁금하신 사항이 있다면 트위터 <a href="//twitter.com/soomtong" target="_blank">@soomtong</a> 으로 연락 주시기 바랍니다.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    {% include '../include/footer.html' %}
+
+</div>
+</body>
+</html>

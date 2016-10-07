@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{site.title}}</title>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="{{site.theme}}/common/style.css"/>
+    <link rel="stylesheet" href="{{site.theme}}/{{site.themeType.setup}}/{{site.themeType.setup}}.css"/>
+</head>
+<body>
+
+{% include site.theme + '/' + site.themeType.setup + '/include/header.html' %}
+
+<div class="bd-pageheader">
+    <div class="container">
+
+        <h1>Default Theme Configuration</h1>
+        <p class="lead">
+            기본 테마를 선택해주세요
+        </p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+            <form id="theme_list" method="post" action="{{site.url}}">
+                <div class="row">
+                    {% for theme in themeList %}
+                    <div class="col-md-4 col-sm-6">
+                        <div class="card" title="{{ theme.folderName }}">
+                            <img class="card-img-top img-fluid" src="/{{theme.folderName}}/screenshot.jpg" alt="{{ theme.folderName }}">
+                            <div class="card-block">
+                                <h4 class="card-title">
+                                    <label>
+                                        <input type="radio" name="theme" value="{{ theme.folderName }}">
+                                        {{ theme.description.title | default('No title here') }}
+                                    </label>
+                                </h4>
+                                <p class="card-text">{{ theme.description.quote | default('No description here') }}</p>
+                                <p class="card-text">
+                                    <small class="text-muted">{{ theme.description.credit | default('No Name') }}</small>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="insert_sample" value="insert"> 샘플 데이터를 함께 설정
+                    </label>
+                </div>
+
+                <div id="message" class="alert alert-danger alert-dismissible fade in" role="alert" hidden>
+                    <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <p class="text"><strong>불량!</strong> 내용 점검에 실패했습니다.</p>
+                </div>
+
+                <input type="hidden" name="_csrf" value="{{_csrf}}"/>
+                <button type="submit" class="btn btn-primary" >Submit</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% include site.theme + '/' + site.themeType.setup + '/include/footer.html' %}
+
+<!-- jQuery first, then Bootstrap JS. -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://github.hubspot.com/tether/dist/js/tether.js"></script>
+<script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+<script src="{{site.theme}}/{{site.themeType.setup}}/{{site.themeType.setup}}.js"></script>
+<script>
+    $(function() {
+//        var $form = $('#database_info');
+//
+//        blititor.dbSetup.initForm($form);
+
+/*
+        $form.on('submit', function (e) {
+            e.preventDefault();
+            if (blititor.dbSetup.checkForm()) {
+                blititor.dbSetup.submitForm(blititor.dbSetup.saveDone, blititor.dbSetup.saveFail);
+            } else {
+                blititor.dbSetup.showMessage('<strong>불량!</strong> 입력 내용을 확인해주세요.')
+            }
+            return false;
+        });
+*/
+    });
+    $(document).ready(function () {
+        // template page tweaks
+//        common.setMaxHeight($('.card'));
+    });
+</script>
+</body>
+</html>

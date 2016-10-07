@@ -1,0 +1,87 @@
+[
+    {
+        "folder": "site",
+        "useDatabase": true,
+        "ignore": false,
+        "tables": {
+            "site": "b_site"
+        },
+        "core": true
+    },
+    {
+        "folder": "account",
+        "useDatabase": true,
+        "ignore": false,
+        "tables": {
+            "user": "b_user",
+            "auth": "b_auth",
+            "point": "b_point"
+        },
+        "core": true
+    },
+    {
+        "folder": "administrator",
+        "useDatabase": false,
+        "ignore": false,
+        "tables": {},
+        "core": false
+    },
+    {
+        "folder": "chatting",
+        "useDatabase": true,
+        "ignore": false,
+        "tables": {
+            "chattingLog": "b_chatting_log",
+            "user": "b_user"
+        },
+        "core": true
+    },
+    {
+        "folder": "counter",
+        "useDatabase": true,
+        "ignore": false,
+        "tables": {
+            "accountLog": "b_account_counter_log",
+            "accountCounter": "b_account_counter",
+            "visitLog": "b_visit_counter_log",
+            "visitCounter": "b_visit_counter",
+            "sessionLog": "b_session_counter_log"
+        },
+        "core": true
+    },
+    {
+        "folder": "editor",
+        "useDatabase": false,
+        "ignore": false
+    },
+    {
+        "folder": "guestbook",
+        "useDatabase": true,
+        "ignore": false,
+        "tables": {
+            "guestbook": "b_guestbook"
+        },
+        "core": false
+    },
+    {
+        "folder": "manager",
+        "useDatabase": false,
+        "ignore": false,
+        "tables": {},
+        "core": false
+    },
+    {
+        "folder": "teamblog",
+        "useDatabase": true,
+        "ignore": false,
+        "tables": {
+            "teamblog": "b_teamblog",
+            "teamblogHistory": "b_teamblog_history",
+            "teamblogRelated": "b_teamblog_related",
+            "teamblogTag": "b_teamblog_tag",
+            "teamblogTagRelated": "b_teamblog_tag_related",
+            "user": "b_user"
+        },
+        "core": false
+    }
+]

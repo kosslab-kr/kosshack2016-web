@@ -1,0 +1,5 @@
+{
+    "port": 3306,
+    "database": "db_blititor",
+    "prefix": "b_"
+}

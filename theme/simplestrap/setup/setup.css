@@ -1,0 +1,101 @@
+/* setup */
+
+.card-deck {
+    margin: 2rem 0;
+}
+
+.card {
+    margin-bottom: 1.5rem;
+}
+
+.bd-pageheader .container {
+    position: relative
+}
+
+.bd-pageheader {
+    padding: 2rem .9375rem;
+    margin-bottom: 1.5rem;
+    color: #d8e5eb;
+    text-align: center;
+    background-color: #46677c
+}
+
+.bd-pageheader h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    color: #fff
+}
+
+.bd-pageheader p {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    font-weight: 300
+}
+
+@media (min-width: 34em) {
+    .bd-pageheader {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        margin-bottom: 3rem;
+        text-align: left
+    }
+}
+
+@media (min-width: 62em) {
+    .bd-pageheader h1, .bd-pageheader p {
+        margin-right: 380px
+    }
+}
+
+@media (min-width: 48em) {
+    .bd-pageheader h1 {
+        font-size: 4rem
+    }
+
+    .bd-pageheader p {
+        font-size: 1.5rem
+    }
+}
+
+.bd-footer {
+    padding: 4rem 0;
+    margin-top: 4rem;
+    font-size: 85%;
+    background-color: #f7f7f7;
+    text-align: center
+}
+
+.bd-footer a {
+    font-weight: 500;
+    color: #55595c
+}
+
+.bd-footer a:hover {
+    color: #0275d8
+}
+
+.bd-footer p {
+    margin-bottom: 0
+}
+
+.bd-footer-links {
+    margin-bottom: 1rem
+}
+
+@media (min-width: 34em) {
+    .bd-footer {
+        text-align: left
+    }
+}
+
+.bd-footer-links {
+    padding-left: 0
+}
+
+.bd-footer-links li {
+    display: inline-block
+}
+
+.bd-footer-links li + li {
+    margin-left: 1rem
+}

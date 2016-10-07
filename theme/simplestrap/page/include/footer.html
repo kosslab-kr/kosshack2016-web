@@ -1,0 +1,15 @@
+<footer class="footer">
+    <div class="row">
+        <div class="col-sm-8">
+            <p class="text-sm-left">Blititor © Company 2016</p>
+        </div>
+        <div class="col-sm-4">
+            {% if user and user.nickname %}
+            <p class="text-xs-right"><a href="/account/info">{{ user.nickname }}</a>
+                <span class="label label-pill label-success small hidden-sm-down">{{ user.level }}</span>
+                <span class="label label-pill label-info small hidden-sm-down">{{ user.grant }}</span>
+            </p>
+            {% endif %}
+        </div>
+    </div>
+</footer>
